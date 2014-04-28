@@ -3,7 +3,16 @@ Bootstrap Message
 
 Usage
 -----
-
+### Show message
+```
+/**
+ * @param {String} message The message content
+ * @param {String} type The type of message. Can be `success`, `info`, `warning` and `danger`.
+ * @param {Number} timeout The duration of message. Default is 3000 (ms)
+ *
+ */
+Msg.show(message, type, timeout);
+```
 
 License
 -----

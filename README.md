@@ -9,9 +9,21 @@ Usage
  * @param {String} message The message content
  * @param {String} type The type of message. Can be `success`, `info`, `warning` and `danger`.
  * @param {Number} timeout The duration of message. Default is 3000 (ms)
- *
  */
 Msg.show(message, type, timeout);
+```
+
+### Show specified type message
+```
+/**
+ * @param {String} message The message content
+ * @param {Number} timeout The duration of message. Default is 3000 (ms)
+ */
+Msg.success(message, timeout);
+Msg.info(message, timeout);
+Msg.warning(message, timeout);
+Msg.error(message, timeout);
+Msg.danger(message, timeout);
 ```
 
 License

@@ -1,2 +1,2 @@
-jquery.message-bootstrap
+Bootstrap Message
 ========================

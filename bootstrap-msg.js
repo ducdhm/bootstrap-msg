@@ -6,84 +6,89 @@
  *
  * Date: Mon, Apr 28th, 2014 (GTM+7)
  */
-(function ($) {
+(function ($, window) {
 	var timer;
 
-	$(function () {
-		var Msg = window.Msg = {
-			info: function (message, timeout) {
-				this.show(message, 'info', timeout);
-			},
-			error: function (message, timeout) {
-				this.danger(message, timeout);
-			},
-			danger: function (message, timeout) {
-				this.show(message, 'danger', timeout);
-			},
-			success: function (message, timeout) {
-				this.show(message, 'success', timeout);
-			},
-			warning: function (message, timeout) {
-				this.show(message, 'warning', timeout);
-			},
-			show: function (message, type, timeout) {
-				var msg = $('#msg');
-				var self = this;
-				var iconClass = '';
+	var Msg = window.Msg = {
+		iconMode: 'bs',
+		info: function (message, timeout) {
+			this.show(message, 'info', timeout);
+		},
+		error: function (message, timeout) {
+			this.danger(message, timeout);
+		},
+		danger: function (message, timeout) {
+			this.show(message, 'danger', timeout);
+		},
+		success: function (message, timeout) {
+			this.show(message, 'success', timeout);
+		},
+		warning: function (message, timeout) {
+			this.show(message, 'warning', timeout);
+		},
+		show: function (message, type, timeout) {
+			var self = this;
 
-				switch (type) {
-					case 'info':
-						iconClass = 'fa-info-circle';
-						break;
-					case 'danger':
-						iconClass = 'fa-times-circle';
-						break;
-					case 'success':
-						iconClass = 'fa-check-circle';
-						break;
-					case 'warning':
-						iconClass = 'fa-exclamation-triangle';
-						break;
-					default:
-				}
+			var msg = $('#msg');
+			if (!msg[0]) {
+				msg = $(
+					'<div id="msg">' +
+						'<a href="#" data-dismiss="msg" class="close">&times;</a>' +
+						'<i></i> ' +
+						'<span></span>' +
+					'</div>'
+				);
 
-				clearTimeout(timer);
-				timer = null;
+				msg.find('[data-dismiss="msg"]').on('click', function (e) {
+					e.preventDefault();
 
-				msg.find('span').html(message);
-				msg.find('i').attr('class', 'fa ' + iconClass);
-				msg.attr('class', 'alert alert-' + type + ' showed');
+					self.hide();
+				});
 
-				if (timeout === undefined) {
-					timeout = 3 * 1000;
-				}
-
-				if (timeout > 0) {
-					timer = setTimeout(function () {
-						self.hide();
-					}, timeout);
-				}
-			},
-			hide: function () {
-				$('#msg').removeClass('showed');
+				msg.appendTo(document.body);
 			}
-		};
 
-		$('#msg').exist(null, function () {
-			$(document.body).append(
-				'<div id="msg">' +
-					'<a href="#" data-dismiss="msg" class="close">&times;</a>' +
-					'<i></i> ' +
-					'<span></span>' +
-				'</div>'
-			);
 
-			$('[data-dismiss="msg"]').on('click', function (e) {
-				e.preventDefault();
+			var iconClass = '';
 
-				Msg.hide();
-			});
-		})
-	});
+			switch (type) {
+				case 'info':
+					iconClass = self.iconMode === 'bs' ? 'glyphicon glyphicon-info-sign' : 'fa fa-info-circle';
+					break;
+				case 'danger':
+					iconClass = self.iconMode === 'bs' ? 'glyphicon glyphicon-remove-sign' : 'fa fa-times-circle';
+					break;
+				case 'success':
+					iconClass = self.iconMode === 'bs' ? 'glyphicon glyphicon-ok-sign' : 'fa fa-check-circle';
+					break;
+				case 'warning':
+					iconClass = self.iconMode === 'bs' ? 'glyphicon glyphicon-warning-sign' : 'fa fa-exclamation-triangle';
+					break;
+				default:
+			}
 
-})(jQuery);
+			clearTimeout(timer);
+			timer = null;
+
+			msg.find('span').html(message);
+			msg.find('i').attr('class', iconClass);
+			setTimeout(function () {
+				msg.attr('class', 'alert alert-' + type + ' showed');
+			}, 0);
+
+			if (timeout === undefined) {
+				timeout = 3 * 1000;
+			}
+
+			if (timeout > 0) {
+				timer = setTimeout(function () {
+					self.hide();
+				}, timeout);
+			}
+		},
+		hide: function () {
+			$('#msg').removeClass('showed');
+		}
+	};
+
+})(jQuery, window);

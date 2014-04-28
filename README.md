@@ -1,7 +1,6 @@
 Bootstrap Message
 ========================
 
-```
 License
 -----
 ### MIT License

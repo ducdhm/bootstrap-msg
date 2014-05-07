@@ -1,5 +1,5 @@
 /**
- * Bootstrap Message (bootstrap.msg) plugin v0.1
+ * Bootstrap Message (bootstrap.msg) plugin v0.2
  * Copyright (c) 2014 Duc Doan Hoang Minh
  *
  * @license https://github.com/bobkhin/bootstrap.msg/blob/master/LICENSE
@@ -30,9 +30,9 @@
 			var self = this;
 
 			var msg = $('#msg');
-			var dontHaveMsg = true;
+			var dontHaveMsg = false;
 			if (!msg[0]) {
-				dontHaveMsg = false;
+				dontHaveMsg = true;
 				msg = $(
 					'<div id="msg">' +
 						'<a href="#" data-dismiss="msg" class="close">&times;</a>' +
@@ -74,9 +74,14 @@
 
 			msg.find('span').html(message);
 			msg.find('i').attr('class', iconClass);
-			setTimeout(function () {
+			if (dontHaveMsg) {
+				setTimeout(function () {
+					msg.attr('class', 'alert alert-' + type + ' showed');
+				}, 50);
+			} else {				
 				msg.attr('class', 'alert alert-' + type + ' showed');
-			}, dontHaveMsg ? 50 : 0);
+			}
+			
 
 			if (timeout === undefined) {
 				timeout = 3 * 1000;

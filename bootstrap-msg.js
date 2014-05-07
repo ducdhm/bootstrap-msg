@@ -30,7 +30,9 @@
 			var self = this;
 
 			var msg = $('#msg');
+			var dontHaveMsg = true;
 			if (!msg[0]) {
+				dontHaveMsg = false;
 				msg = $(
 					'<div id="msg">' +
 						'<a href="#" data-dismiss="msg" class="close">&times;</a>' +
@@ -74,7 +76,7 @@
 			msg.find('i').attr('class', iconClass);
 			setTimeout(function () {
 				msg.attr('class', 'alert alert-' + type + ' showed');
-			}, 0);
+			}, dontHaveMsg ? 50 : 0);
 
 			if (timeout === undefined) {
 				timeout = 3 * 1000;

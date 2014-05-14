@@ -1,16 +1,22 @@
 /**
- * Bootstrap Message (bootstrap.msg) plugin v0.2
+ * Bootstrap Message (bootstrap.msg) plugin v0.3
  * Copyright (c) 2014 Duc Doan Hoang Minh
  *
  * @license https://github.com/bobkhin/bootstrap.msg/blob/master/LICENSE
  *
- * Date: Mon, Apr 28th, 2014 (GTM+7)
+ * Date: Wed, May 14th, 2014 (GTM+7)
  */
 (function ($, window) {
 	var timer;
 
 	var Msg = window.Msg = {
 		iconMode: 'bs',
+		timeout: {
+			danger: 10 * 1000,
+			success: 3 * 1000,
+			info: 5 * 1000,
+			warning: 5 * 1000
+		},
 		info: function (message, timeout) {
 			this.show(message, 'info', timeout);
 		},
@@ -84,7 +90,7 @@
 			
 
 			if (timeout === undefined) {
-				timeout = 3 * 1000;
+				timeout = Msg.timeout[type];
 			}
 
 			if (timeout > 0) {

@@ -1,10 +1,10 @@
-/**
- * Bootstrap Message (bootstrap.msg) plugin v0.2
+/*!*
+ * Bootstrap Message (bootstrap.msg) plugin v0.3
  * Copyright (c) 2014 Duc Doan Hoang Minh
  *
  * @license https://github.com/bobkhin/bootstrap.msg/blob/master/LICENSE
  *
- * Date: Mon, Apr 28th, 2014 (GTM+7)
+ * Date: Wed, May 14th, 2014 (GTM+7)
  */
 #msg {
     position: fixed;
@@ -34,6 +34,13 @@
     opacity: 1;
     filter: alpha(opacity=100);
     top: 50px;
+}
+
+@media (min-width: 1200px) {
+    #msg {
+        width: 600px;
+        margin-left: -300px;
+    }
 }
 
 @media (max-width: 479px) {

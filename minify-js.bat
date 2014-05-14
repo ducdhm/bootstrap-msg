@@ -1,0 +1,1 @@
+uglifyjs %CD%\bootstrap-msg.js -o bootstrap-msg.min.js -c -m --comments

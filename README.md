@@ -17,13 +17,21 @@ Msg.show(message, type, timeout);
 ```
 /**
  * @param {String} message The message content
- * @param {Number} timeout The duration of message. Default is 3000 (ms)
+ * @param {Number} timeout The duration of message (in millisecond - ms)
  */
 Msg.success(message, timeout);
 Msg.info(message, timeout);
 Msg.warning(message, timeout);
 Msg.error(message, timeout);
 Msg.danger(message, timeout);
+```
+
+### Default timeout
+```
+Msg.timeout.danger = 10 * 1000 // danger and error are same
+Msg.timeout.success = 3 * 1000
+Msg.timeout.info = 5 * 1000
+Msg.timeout.warning = 5 * 1000
 ```
 
 License

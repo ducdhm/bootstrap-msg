@@ -1,5 +1,6 @@
-Bootstrap Message - jQuery plugin for showing message with Boostrap alert classes
+Bootstrap Message
 ========================
+jQuery plugin for showing message with Bootstrap alert classes
 
 Usage
 -----

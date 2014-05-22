@@ -1,4 +1,4 @@
-/**
+/*!*
  * Bootstrap Message (bootstrap.msg) plugin v0.3
  * Copyright (c) 2014 Duc Doan Hoang Minh
  *

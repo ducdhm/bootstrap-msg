@@ -1,1 +1,0 @@
-cleancss -o bootstrap-msg.min.css bootstrap-msg.css

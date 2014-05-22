@@ -28,10 +28,10 @@ Msg.danger(message, timeout);
 
 ### Default timeout
 ```
-Msg.timeout.danger = 10 * 1000 // danger and error are same
-Msg.timeout.success = 3 * 1000
-Msg.timeout.info = 5 * 1000
-Msg.timeout.warning = 5 * 1000
+Msg.timeout.danger = 10 * 1000; // danger and error are same
+Msg.timeout.success = 3 * 1000;
+Msg.timeout.info = 5 * 1000;
+Msg.timeout.warning = 5 * 1000;
 ```
 
 License

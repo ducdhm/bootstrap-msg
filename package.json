@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-msg",
   "version": "0.3.0",
-  "description": "Bootstrap Message - jQuery plugin for showing message with Boostrap alert classes",
+  "description": "The jQuery plugin for showing message with Boostrap alert classes",
   "main": "bootstrap-msg.js",
   "directories": {
     "doc": "doc"

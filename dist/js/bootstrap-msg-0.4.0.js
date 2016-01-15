@@ -1,11 +1,11 @@
 /*!*
- * Bootstrap Message (bootstrap.msg) plugin v0.3
- * Copyright (c) 2014 Duc Doan Hoang Minh
- *
- * @license https://github.com/bobkhin/bootstrap.msg/blob/master/LICENSE
- *
- * Date: Wed, May 14th, 2014 (GTM+7)
+ * Bootstrap Message (bootstrap.msg)
+ * @copyright: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @author: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @version: 0.4.0
+ * @dependencies: $
  */
+
 (function ($, window) {
 	var timer;
 

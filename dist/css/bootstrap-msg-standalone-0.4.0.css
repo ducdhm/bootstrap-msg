@@ -1,0 +1,156 @@
+/*!*
+ * Bootstrap Message (bootstrap.msg)
+ * @copyright: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @author: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @version: 0.4.0
+ * @dependencies: $
+ */
+/* ==================================================================================
+   Bootstrap Alerts
+   ================================================================================== */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.alert .alert-link {
+  font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+.alert > p + p {
+  margin-top: 5px;
+}
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 35px;
+}
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+  color: #2b542c;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.alert-info .alert-link {
+  color: #245269;
+}
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+.alert-warning .alert-link {
+  color: #66512c;
+}
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+  color: #843534;
+}
+/* ==================================================================================
+   Bootstrap Close
+   ================================================================================== */
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+/* ==================================================================================
+   Bootstrap Message
+   ================================================================================== */
+#msg {
+  position: fixed;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 400px;
+  top: -300px;
+  left: 50%;
+  margin-left: -200px;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  font: 14px/1.42857143 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#msg .close {
+  text-decoration: none;
+}
+#msg i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+#msg span {
+  font-size: 15px;
+}
+#msg.showed {
+  top: 50px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+@media (min-width: 1200px) {
+  #msg {
+    width: 600px;
+    margin-left: -300px;
+  }
+}
+@media (max-width: 479px) {
+  #msg {
+    width: 300px;
+    margin-left: -150px;
+  }
+}

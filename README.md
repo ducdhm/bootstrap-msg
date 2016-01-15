@@ -1,9 +1,7 @@
-Bootstrap Message
-========================
+#Bootstrap Message
 The jQuery plugin for showing message with Bootstrap alert classes
 
-Usage
------
+##Usage
 ### Show message
 ```javascript
 /**
@@ -39,4 +37,4 @@ Msg.timeout.warning = 5 * 1000;
 https://github.com/ducdhm/bootstrap-msg/blob/master/LICENSE.md
 
 ## Lived examples
- * https://rawgit.com/ducdhm/bootstrap-msg/master/examples/index.html
+https://rawgit.com/ducdhm/bootstrap-msg/master/examples/index.html

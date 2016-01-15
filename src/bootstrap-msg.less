@@ -1,0 +1,47 @@
+/*!*
+ * Bootstrap Message (bootstrap.msg)
+ * @copyright: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @author: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @version: @{version}
+ * @dependencies: $
+ */
+
+@import "less/variables";
+@import "less/mixins";
+
+/* ==================================================================================
+   Bootstrap Message
+   ================================================================================== */
+#msg {
+    position: fixed;
+    .opacity(0);
+    width: 400px;
+    top: -300px;
+    left: 50%;
+    margin-left: -200px;
+    .transition(~"opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out");
+
+    i {
+        font-size: 20px;
+        vertical-align: middle;
+    }
+
+    span {
+        font-size: 15px;
+    }
+
+    &.showed {
+        top: 50px;
+        .opacity(1);
+    }
+
+    @media (min-width: 1200px) {
+        width: 600px;
+        margin-left: -300px;
+    }
+
+    @media (max-width: 479px) {
+        width: 300px;
+        margin-left: -150px;
+    }
+}

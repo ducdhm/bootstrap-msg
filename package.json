@@ -1,24 +1,41 @@
 {
   "name": "bootstrap-msg",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "The jQuery plugin for showing message with Boostrap alert classes",
-  "main": "bootstrap-msg.js",
+  "main": "gulpfile.js",
   "directories": {
     "doc": "doc"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bobkhin/bootstrap-msg"
+    "url": "git+https://github.com/ducdhm/bootstrap-msg.git"
   },
-  "author": "Duc Doan Hoang Minh",
-  "license": "MIT",
+  "keywords": [
+    "bootstrap",
+    "bootstrap alert",
+    "bootstrap message"
+  ],
+  "author": "ducdhm@gmail.com",
+  "license": "For licensing, see LICENSE.md",
   "bugs": {
-    "url": "https://github.com/bobkhin/bootstrap-msg/issues"
+    "url": "https://github.com/ducdhm/bootstrap-msg/issues"
   },
-  "homepage": "https://github.com/bobkhin/bootstrap-msg",
+  "homepage": "https://github.com/ducdhm/bootstrap-msg#readme",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-cssmin": "^0.9.0",
-    "grunt-contrib-uglify": "^0.4.0"
+    "gulp": "^3.9.0",
+    "gulp-copy": "0.0.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.0.5",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5"
   }
 }

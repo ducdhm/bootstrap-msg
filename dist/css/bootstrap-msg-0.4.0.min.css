@@ -1,0 +1,8 @@
+/*!*
+ * Bootstrap Message (bootstrap.msg)
+ * @copyright: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @author: Duc Doan Hoang Minh (ducdhm@gmail.com)
+ * @version: 0.4.0
+ * @dependencies: $
+ */#msg{position:fixed;opacity:0;filter:alpha(opacity=0);width:400px;top:-300px;left:50%;margin-left:-200px;-webkit-transition:opacity .3s linear,top .3s ease-out,bottom .3s ease-out,margin-top .3s ease-out;-o-transition:opacity .3s linear,top .3s ease-out,bottom .3s ease-out,margin-top .3s ease-out;transition:opacity .3s linear,top .3s ease-out,bottom .3s ease-out,margin-top .3s ease-out}#msg i{font-size:20px;vertical-align:middle}#msg span{font-size:15px}#msg.showed{top:50px;opacity:1;filter:alpha(opacity=100)}@media (min-width:1200px){#msg{width:600px;margin-left:-300px}}@media (max-width:479px){#msg{width:300px;margin-left:-150px}}
+/*# sourceMappingURL=bootstrap-msg-0.4.0.min.css.map */

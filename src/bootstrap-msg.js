@@ -3,7 +3,7 @@
  * @copyright: Duc Doan Hoang Minh (ducdhm@gmail.com)
  * @author: Duc Doan Hoang Minh (ducdhm@gmail.com)
  * @version: @{version}
- * @dependencies: $
+ * @dependencies: $, Bootstrap
  */
 
 (function ($, window) {
@@ -36,9 +36,9 @@
 			var self = this;
 
 			var msg = $('#msg');
-			var dontHaveMsg = false;
+			var doesMsgExist = false;
 			if (!msg[0]) {
-				dontHaveMsg = true;
+				doesMsgExist = true;
 				msg = $(
 					'<div id="msg">' +
 						'<a href="#" data-dismiss="msg" class="close">&times;</a>' +
@@ -55,7 +55,6 @@
 
 				msg.appendTo(document.body);
 			}
-
 
 			var iconClass = '';
 
@@ -80,7 +79,7 @@
 
 			msg.find('span').html(message);
 			msg.find('i').attr('class', iconClass);
-			if (dontHaveMsg) {
+			if (doesMsgExist) {
 				setTimeout(function () {
 					msg.attr('class', 'alert alert-' + type + ' showed');
 				}, 50);

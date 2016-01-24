@@ -6,7 +6,6 @@ var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
-var copy = require('gulp-copy');
 var pjson = require('./package.json');
 var rimraf = require('gulp-rimraf');
 var replace = require('gulp-replace');

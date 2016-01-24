@@ -19,14 +19,13 @@
     "bootstrap message"
   ],
   "author": "ducdhm@gmail.com",
-  "license": "For licensing, see LICENSE.md",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ducdhm/bootstrap-msg/issues"
   },
   "homepage": "https://github.com/ducdhm/bootstrap-msg#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-copy": "0.0.2",
     "gulp-cssmin": "^0.1.7",
     "gulp-less": "^3.0.5",
     "gulp-plumber": "^1.0.1",

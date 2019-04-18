@@ -1,40 +1,69 @@
-#Bootstrap Message
-The jQuery plugin for showing message with Bootstrap alert classes
+# BootstrapMsg
+The jQuery plugin for showing message with Bootstrap alert classes (http://ducdhm.github.io/bootstrap-msg/)
 
-##Usage
-### Show message
+
+## Shortcuts
+ * [Dependencies](#dependencies)
+ * [Methods](#methods)
+ * [Default](#default)
+ * [Custom Icon](#custom-icon)
+ * [License](#license)
+
+
+## Dependencies
+ * [jQuery](http://jquery.com/)
+ * [Bootstrap](https://getbootstrap.com/) (Default icon)
+ * [Fontawesome](https://fontawesome.com/) (Optional for icon)
+ 
+
+## Methods
+| Name        | Params (ParamType: ParamName)                          | Description                                                                                                                         |
+|-------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Msg.show    | String: type<br />String: message<br />Number: timeout | Show message. `type` can be `info`, `success`, `warning` or `danger`. If `timeout` is not set, will use [default timeout](#timeout) |
+| Msg.info    | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `info`                                                                                     |
+| Msg.success | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `success`                                                                                  |
+| Msg.warning | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `warning`                                                                                  |
+| Msg.error   | String: message<br />Number: timeout                   | Alias of `Msg.danger`                                                                                                               |
+| Msg.danger  | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `danger`                                                                                   |
+
+
+## Default
+
+### Timeout
+Timeout for BootstrapMsg is available at `Msg.timeout`
+
+| Type    | Timeout (in ms) |
+|---------|-----------------|
+| info    | `5 * 1000`      |
+| success | `5 * 1000`      |
+| warning | `5 * 1000`      |
+| danger  | `5 * 1000`      |
+
+### Icon
+Icon for BootstrapMsg is available at `Msg.icon`
+
+| Type    | Class                                  |
+|---------|----------------------------------------|
+| info    | `glyphicon glyphicon-info-sign`        |
+| success | `glyphicon glyphicon-ok-sign`          |
+| warning | `glyphicon glyphicon-exclamation-sign` |
+| danger  | `glyphicon glyphicon-remove-sign`      |
+
+
+## Custom Icon
+If you want to custom icon for BootstrapMsg, you just need to specify icon class for each message type. Example:
 ```javascript
-/**
- * @param {String} message The message content
- * @param {String} type The type of message. Can be `success`, `info`, `warning` and `danger`.
- * @param {Number} timeout The duration of message. Default is 3000 (ms)
- */
-Msg.show(message, type, timeout);
+Msg.icon = {    
+    info: 'fa fa-bath',
+    success: 'fa fa-anchor',
+    warning: 'fa fa-bell-o',
+    danger: 'fa fa-bolt'  
+};
 ```
 
-### Show specified type message
-```javascript
-/**
- * @param {String} message The message content
- * @param {Number} timeout The duration of message (in millisecond - ms)
- */
-Msg.success(message, timeout);
-Msg.info(message, timeout);
-Msg.warning(message, timeout);
-Msg.error(message, timeout);
-Msg.danger(message, timeout);
-```
+### Using FontAwesome Icon
+We already define a FontAwesome icon set for BootstrapMsg at `Msg.ICON.FONTAWESOME`. For using this icon set, just need `Msg.icon = Msg.ICONS.FONTAWESOME;`
 
-### Default timeout
-```javascript
-Msg.timeout.danger = 10 * 1000; // danger and error are same
-Msg.timeout.success = 3 * 1000;
-Msg.timeout.info = 5 * 1000;
-Msg.timeout.warning = 5 * 1000;
-```
 
 ## License
-https://github.com/ducdhm/bootstrap-msg/blob/master/LICENSE.md
-
-## Lived examples
-https://rawgit.com/ducdhm/bootstrap-msg/master/examples/index.html
+Please read at [here](LICENSE.md)

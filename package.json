@@ -37,6 +37,7 @@
         "string-replace-loader": "^2.1.1",
         "webpack": "^4.29.6",
         "webpack-cli": "^3.3.0",
+        "wrapper-webpack-plugin": "^2.1.0",
         "yargs": "^13.2.2"
     }
 }

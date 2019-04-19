@@ -3,6 +3,7 @@ const argv = require('yargs').argv;
 const packageJson = require('./package.json');
 const webpack = require('webpack');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const WrapperPlugin = require('wrapper-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -15,7 +16,7 @@ let PROD = process.env.NODE_ENV === 'production';
 
 module.exports = {
     mode: PROD ? 'production' : 'development',
-    devtool: PROD ? 'source-map' : 'eval-source-map',
+    devtool: PROD ? 'source-map' : 'inline-source-map',
     
     entry: './src/index.js',
     output: {
@@ -30,13 +31,25 @@ module.exports = {
     
     optimization: {
         minimizer: [
-            new TerserJSPlugin({}),
-            new OptimizeCSSAssetsPlugin({})
+            new TerserJSPlugin({
+                sourceMap: true
+            }),
+            new OptimizeCSSAssetsPlugin({
+                cssProcessorOptions: {
+                    map: {
+                        inline: false
+                    }
+                }
+            })
         ],
     },
     
     plugins: PROD ? [
         new webpack.BannerPlugin(BANNER),
+        new WrapperPlugin({
+            test: /\.css$/,
+            footer: `/*# sourceMappingURL=${packageJson.name}.css.map */`
+        }),
         new MiniCssExtractPlugin({
             filename: `css/${packageJson.name}.css`
         })
@@ -68,7 +81,7 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader',
+                    'sass-loader'
                 ],
             }
         ]

@@ -4,7 +4,26 @@ import TIMEOUT from './defaults/timeout';
 import iconBs from './defaults/icon';
 import iconFa from './defaults/iconFa';
 
-let timer;
+const initMsg = () => {
+    const msg = $(`
+        <div id="msg">
+            <a href="#" data-dismiss="msg" class="close">&times;</a>
+            <i></i>
+            <span></span>
+            <div></div>
+        </div>
+    `);
+    
+    msg.find('[data-dismiss="msg"]').on('click', function (e) {
+        e.preventDefault();
+        
+        self.hideMsg();
+    });
+    
+    msg.appendTo(document.body);
+};
+initMsg();
+
 export default {
     ICONS: {
         BOOTSTRAP: iconBs,
@@ -13,38 +32,43 @@ export default {
     icon: iconFa,
     timeout: TIMEOUT,
     version: '@{version}',
+    timer: null,
     
-    showMsg: function (type, message, timeout = this.timeout[type]) {
-        let self = this;
-        let msg = $('#msg');
-        if (msg.length === 0) {
-            msg = $(`
+    init: function () {
+        const msg = $(`
                 <div id="msg">
                     <a href="#" data-dismiss="msg" class="close">&times;</a>
                     <i></i>
                     <span></span>
+                    <div></div>
                 </div>
             `);
+        
+        msg.find('[data-dismiss="msg"]').on('click', function (e) {
+            e.preventDefault();
             
-            msg.find('[data-dismiss="msg"]').on('click', function (e) {
-                e.preventDefault();
-                
-                self.hideMsg();
-            });
-            
-            msg.appendTo(document.body);
-        }
+            self.hideMsg();
+        });
+        
+        msg.appendTo(document.body);
+    },
+    
+    showMsg: function (type, message, timeout = this.timeout[type]) {
+        const self = this;
+        const msg = $('#msg');
+        const progress = msg.find('div');
         
         msg.find('span').html(message);
         msg.find('i').attr('class', self.icon[type]);
+        msg.attr('class', `alert alert-${type} showed`);
+        progress.attr('class', `alert alert-${type} msg-progress`).css('width', 0);
         
-        setTimeout(function () {
-            msg.attr('class', 'alert alert-' + type + ' showed');
-        }, 50);
-        
-        clearTimeout(timer);
+        clearTimeout(this.timer);
         if (timeout > 0) {
-            timer = setTimeout(function () {
+            progress.stop().animate({
+                width: '100%'
+            }, timeout);
+            this.timer = setTimeout(function () {
                 self.hideMsg();
             }, timeout);
         }

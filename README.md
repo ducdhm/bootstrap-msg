@@ -12,8 +12,8 @@ The jQuery plugin for showing message with Bootstrap alert classes (http://ducdh
 
 ## Dependencies
  * [jQuery](http://jquery.com/)
- * [Bootstrap](https://getbootstrap.com/) (Default icon)
- * [Fontawesome](https://fontawesome.com/) (Optional for icon)
+ * [Bootstrap](https://getbootstrap.com/)
+ * [Fontawesome](https://fontawesome.com/)
  
 
 ## Methods
@@ -42,12 +42,12 @@ Timeout for BootstrapMsg is available at `Msg.timeout`
 ### Icon
 Icon for BootstrapMsg is available at `Msg.icon`
 
-| Type    | Class                                  |
-|---------|----------------------------------------|
-| info    | `glyphicon glyphicon-info-sign`        |
-| success | `glyphicon glyphicon-ok-sign`          |
-| warning | `glyphicon glyphicon-exclamation-sign` |
-| danger  | `glyphicon glyphicon-remove-sign`      |
+| Type    | Class                      |
+|---------|----------------------------|
+| info    | `fa fa-info-circle`        |
+| success | `fa fa-check-circle`       |
+| warning | `fa fa-exclamation-circle` |
+| danger  | `fa fa-times-circle`       |
 
 
 ## Custom Icon
@@ -61,8 +61,8 @@ Msg.icon = {
 };
 ```
 
-### Using FontAwesome Icon
-We already define a FontAwesome icon set for BootstrapMsg at `Msg.ICON.FONTAWESOME`. For using this icon set, just need `Msg.icon = Msg.ICONS.FONTAWESOME;`
+### Using Bootstrap Icon
+We already define a Bootstrap icon set for BootstrapMsg at `Msg.ICON.BOOTSTRAP`. For using this icon set, just need `Msg.icon = Msg.ICONS.BOOTSTRAP;`
 
 
 ## License

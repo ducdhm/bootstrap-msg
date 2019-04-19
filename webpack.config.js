@@ -2,7 +2,9 @@ const path = require('path');
 const argv = require('yargs').argv;
 const packageJson = require('./package.json');
 const webpack = require('webpack');
+const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const BANNER = `${packageJson.title} v${packageJson.version} | Copyright (c) 2016-present ${packageJson.author}`;
 
@@ -24,6 +26,13 @@ module.exports = {
         umdNamedDefine: true,
         filename: `js/${packageJson.name}.js`,
         globalObject: `typeof self !== 'undefined' ? self : this`
+    },
+    
+    optimization: {
+        minimizer: [
+            new TerserJSPlugin({}),
+            new OptimizeCSSAssetsPlugin({})
+        ],
     },
     
     plugins: PROD ? [

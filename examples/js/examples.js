@@ -1,5 +1,5 @@
 $(function () {
-	var example = $('example');
+	var example = $('#example');
 	switch (example.attr('data-icon')) {
 		case 'fa':
 			Msg.icon = Msg.ICONS.FONTAWESOME;

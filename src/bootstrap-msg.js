@@ -4,26 +4,6 @@ import TIMEOUT from './defaults/timeout';
 import iconBs from './defaults/icon';
 import iconFa from './defaults/iconFa';
 
-const initMsg = () => {
-    const msg = $(`
-        <div id="msg">
-            <a href="#" data-dismiss="msg" class="close">&times;</a>
-            <i></i>
-            <span></span>
-            <div></div>
-        </div>
-    `);
-    
-    msg.find('[data-dismiss="msg"]').on('click', function (e) {
-        e.preventDefault();
-        
-        self.hideMsg();
-    });
-    
-    msg.appendTo(document.body);
-};
-initMsg();
-
 export default {
     ICONS: {
         BOOTSTRAP: iconBs,
@@ -35,14 +15,15 @@ export default {
     timer: null,
     
     init: function () {
+        const self = this;
         const msg = $(`
-                <div id="msg">
-                    <a href="#" data-dismiss="msg" class="close">&times;</a>
-                    <i></i>
-                    <span></span>
-                    <div></div>
-                </div>
-            `);
+            <div id="msg">
+                <a href="#" data-dismiss="msg" class="close">&times;</a>
+                <i></i>
+                <span></span>
+                <div class="msg-progress"></div>
+            </div>
+        `);
         
         msg.find('[data-dismiss="msg"]').on('click', function (e) {
             e.preventDefault();
@@ -51,6 +32,8 @@ export default {
         });
         
         msg.appendTo(document.body);
+        
+        return self;
     },
     
     showMsg: function (type, message, timeout = this.timeout[type]) {
@@ -97,4 +80,4 @@ export default {
     hideMsg: function () {
         $('#msg').removeClass('showed');
     }
-};
+}.init();

@@ -20,6 +20,17 @@
         font-size: 15px;
     }
 
+    .msg-progress {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        border-width: 2px 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        border-radius: 0;
+    }
+
     &.showed {
         top: 50px;
         opacity: 1;
@@ -31,16 +42,5 @@
 
     @media (max-width: 479px) {
         width: 300px;
-    }
-
-    .msg-progress {
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        border-width: 2px 0;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        border-radius: 0;
     }
 }

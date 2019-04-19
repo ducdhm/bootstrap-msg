@@ -10,7 +10,7 @@ export default {
         BOOTSTRAP: iconBs,
         FONTAWESOME: iconFa
     },
-    icon: iconBs,
+    icon: iconFa,
     timeout: TIMEOUT,
     version: '@{version}',
     

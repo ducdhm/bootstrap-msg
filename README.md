@@ -1,5 +1,5 @@
 # BootstrapMsg
-The jQuery plugin for showing message with Bootstrap alert classes (http://ducdhm.github.io/bootstrap-msg/)
+The jQuery plugin for showing message with Bootstrap alert classes ([http://ducdhm.github.io/bootstrap-msg/](http://ducdhm.github.io/bootstrap-msg/))
 
 
 ## Shortcuts

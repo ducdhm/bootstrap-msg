@@ -4,6 +4,7 @@
     "libraryName": "Msg",
     "version": "1.0.0",
     "description": "The jQuery plugin for showing message with Bootstrap alert classes",
+    "main": "index.js",
     "scripts": {
         "build": "webpack --prod",
         "dev": "webpack --progress --color --watch"
@@ -14,8 +15,8 @@
     },
     "keywords": [
         "bootstrap",
-        "bootstrap alert",
-        "bootstrap message"
+        "bootstrap-alert",
+        "bootstrap-message"
     ],
     "author": "Duc Doan (ducdhm@gmail.com)",
     "license": "MIT",
@@ -39,5 +40,10 @@
         "webpack-cli": "^3.3.0",
         "wrapper-webpack-plugin": "^2.1.0",
         "yargs": "^13.2.2"
+    },
+    "dependencies": {
+        "bootstrap": "^3.4.1",
+        "font-awesome": "^4.7.0",
+        "jquery": "^3.4.0"
     }
 }

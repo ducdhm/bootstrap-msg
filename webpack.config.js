@@ -96,7 +96,12 @@ module.exports = {
         ]
     },
     externals: {
-        jquery: 'jQuery'
+        jquery: {
+            amd: 'jquery',
+            root: '$',
+            commonjs: 'jquery',
+            commonjs2: 'jquery'
+        }
     },
     resolve: {
         modules: [path.resolve('./node_modules'), path.resolve('./src')],

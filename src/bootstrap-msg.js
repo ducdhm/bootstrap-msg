@@ -13,6 +13,7 @@ export default {
     timeout: TIMEOUT,
     version: '@{version}',
     timer: null,
+    extraClass: '',
     
     init: function () {
         const self = this;
@@ -36,14 +37,16 @@ export default {
         return self;
     },
     
-    showMsg: function (type, message, timeout = this.timeout[type]) {
+    showMsg: function (type, message, extraClass, timeout = this.timeout[type]) {
         const self = this;
         const msg = $('#msg');
         const progress = msg.find('div');
         
+        extraClass = extraClass || this.extraClass;
+        
         msg.find('span').html(message);
         msg.find('i').attr('class', self.icon[type]);
-        msg.attr('class', `alert alert-${type} showed`);
+        msg.attr('class', `alert alert-${type} showed ${extraClass}`);
         progress.attr('class', `alert alert-${type} msg-progress`).css('width', 0);
         
         clearTimeout(this.timer);
@@ -57,27 +60,28 @@ export default {
         }
     },
     
-    info: function (message, timeout) {
-        this.showMsg('info', message, timeout);
+    info: function (message, extraClass, timeout) {
+        this.showMsg('info', message, extraClass, timeout);
     },
     
-    success: function (message, timeout) {
-        this.showMsg('success', message, timeout);
+    success: function (message, extraClass, timeout) {
+        this.showMsg('success', message, extraClass, timeout);
     },
     
-    warning: function (message, timeout) {
-        this.showMsg('warning', message, timeout);
+    warning: function (message, extraClass, timeout) {
+        this.showMsg('warning', message, extraClass, timeout);
     },
     
-    error: function (message, timeout) {
-        this.danger(message, timeout);
+    error: function (message, extraClass, timeout) {
+        this.danger(message, extraClass, timeout);
     },
     
-    danger: function (message, timeout) {
-        this.showMsg('danger', message, timeout);
+    danger: function (message, extraClass, timeout) {
+        this.showMsg('danger', message, extraClass, timeout);
     },
     
     hideMsg: function () {
         $('#msg').removeClass('showed');
     }
+    
 }.init();

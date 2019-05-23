@@ -1,3 +1,21 @@
 .btn {
     margin-bottom: 10px;
 }
+
+#msg.custom-style {
+    border-width: 4px;
+    border-style: dotted;
+    border-radius: 10px;
+}
+
+#msg.custom-style span {
+    font-size: 20px;
+}
+
+#msg.custom-style i {
+    font-size: 30px;
+}
+
+#msg.custom-style .msg-progress {
+    border-width: 4px 0;
+}

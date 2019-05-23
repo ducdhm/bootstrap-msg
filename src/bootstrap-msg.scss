@@ -36,6 +36,12 @@
         opacity: 1;
     }
 
+    &.alert-no-icon {
+        i {
+            display: none;
+        }
+    }
+
     @media (min-width: 1200px) {
         width: 600px;
     }

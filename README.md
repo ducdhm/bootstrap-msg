@@ -18,14 +18,14 @@ The jQuery plugin for showing message with Bootstrap alert classes ([http://ducd
  
 
 ## Methods
-| Name        | Params (ParamType: ParamName)                                                  | Description                                                                                                                         |
-|-------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Msg.show    | String: type<br />String: message<br />String: extraClass<br />Number: timeout | Show message. `type` can be `info`, `success`, `warning` or `danger`. If `timeout` is not set, will use [default timeout](#timeout) |
-| Msg.info    | String: message<br />String: extraClass<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `info`                                                                                     |
-| Msg.success | String: message<br />String: extraClass<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `success`                                                                                  |
-| Msg.warning | String: message<br />String: extraClass<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `warning`                                                                                  |
-| Msg.error   | String: message<br />String: extraClass<br />Number: timeout                   | Alias of `Msg.danger`                                                                                                               |
-| Msg.danger  | String: message<br />String: extraClass<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `danger`                                                                                   |
+| Name        | Params (ParamType: ParamName)                          | Description                                                                                                                         |
+|-------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Msg.show    | String: type<br />String: message<br />Number: timeout | Show message. `type` can be `info`, `success`, `warning` or `danger`. If `timeout` is not set, will use [default timeout](#timeout) |
+| Msg.info    | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `info`                                                                                     |
+| Msg.success | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `success`                                                                                  |
+| Msg.warning | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `warning`                                                                                  |
+| Msg.error   | String: message<br />Number: timeout                   | Alias of `Msg.danger`                                                                                                               |
+| Msg.danger  | String: message<br />Number: timeout                   | Shortcut of `showMessage` with `type` is `danger`                                                                                   |
 
 
 ## Default
@@ -65,9 +65,12 @@ Msg.icon = {
 ### Using Bootstrap Icon
 We already define a Bootstrap icon set for BootstrapMsg at `Msg.ICON.BOOTSTRAP`. For using this icon set, just need `Msg.icon = Msg.ICONS.BOOTSTRAP;`
 
+### Hide icon
+If you do not want to show icon in BootstrapMsg, you can set `Msg.iconEnabled = false;`
+
 
 ## Extra class
-If you want to add extra class to BootstrapMsg element, just change `Msg.extraClass` for default extra class or pass `extraClass` param to BootstrapMsg [methods](#methods)
+If you want to add extra class to BootstrapMsg element, just change `Msg.extraClass` for default extra class
 
 
 ## License

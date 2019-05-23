@@ -32,24 +32,33 @@
             </div>
         </nav>
     
-        <div class="container">
+        <div class="container" id="example" data-icon="fa" data-extra-class="custom-style">
             <div class="row">
                 <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Examples list</strong></h3>
+                    <div class="page-header">
+                        <h3>Show message with <code>custom-style</code> class</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button class="btn btn-block btn-info" type="button"><i class="fa fa-info-circle"></i> Info</button>
                         </div>
-                        <div class="list-group">
-                            <a class="list-group-item" href="./bootstrap_icon.html">Bootstrap Icon</a>
-                            <a class="list-group-item" href="./fontawesome_icon.html">FontAwesome Icon</a>
-                            <a class="list-group-item" href="./custom_icon.html">Custom Icon</a>
-                            <a class="list-group-item" href="./no_icon.html">No Icon</a>
-                            <a class="list-group-item" href="./extra_class.html">Extra Class</a>
+                        <div class="col-sm-6">
+                            <button class="btn btn-block btn-success" type="button"><i class="fa fa-check-circle"></i> Success</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-block btn-warning" type="button"><i class="fa fa-exclamation-circle"></i> Warning</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-block btn-danger" type="button"><i class="fa fa-times-circle"></i> Error</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
+        <script type="text/javascript" src="./vendors/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="./vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../dist/js/bootstrap-msg.js"></script>
+        <script type="text/javascript" src="./js/examples.js"></script>
     </body>
 </html>

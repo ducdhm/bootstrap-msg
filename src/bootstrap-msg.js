@@ -10,6 +10,7 @@ export default {
         FONTAWESOME: iconFa
     },
     icon: iconFa,
+    iconEnabled: true,
     timeout: TIMEOUT,
     version: '@{version}',
     timer: null,
@@ -37,16 +38,14 @@ export default {
         return self;
     },
     
-    showMsg: function (type, message, extraClass, timeout = this.timeout[type]) {
+    showMsg: function (type, message, timeout = this.timeout[type]) {
         const self = this;
         const msg = $('#msg');
         const progress = msg.find('div');
         
-        extraClass = extraClass || this.extraClass;
-        
         msg.find('span').html(message);
         msg.find('i').attr('class', self.icon[type]);
-        msg.attr('class', `alert alert-${type} showed ${extraClass}`);
+        msg.attr('class', `alert alert-${type} showed ${self.extraClass} ${self.iconEnabled ? '' : 'alert-no-icon'}`);
         progress.attr('class', `alert alert-${type} msg-progress`).css('width', 0);
         
         clearTimeout(this.timer);
@@ -60,24 +59,24 @@ export default {
         }
     },
     
-    info: function (message, extraClass, timeout) {
-        this.showMsg('info', message, extraClass, timeout);
+    info: function (message, timeout) {
+        this.showMsg('info', message, timeout);
     },
     
-    success: function (message, extraClass, timeout) {
-        this.showMsg('success', message, extraClass, timeout);
+    success: function (message, timeout) {
+        this.showMsg('success', message, timeout);
     },
     
-    warning: function (message, extraClass, timeout) {
-        this.showMsg('warning', message, extraClass, timeout);
+    warning: function (message, timeout) {
+        this.showMsg('warning', message, timeout);
     },
     
-    error: function (message, extraClass, timeout) {
-        this.danger(message, extraClass, timeout);
+    error: function (message, timeout) {
+        this.danger(message, timeout);
     },
     
-    danger: function (message, extraClass, timeout) {
-        this.showMsg('danger', message, extraClass, timeout);
+    danger: function (message, timeout) {
+        this.showMsg('danger', message, timeout);
     },
     
     hideMsg: function () {

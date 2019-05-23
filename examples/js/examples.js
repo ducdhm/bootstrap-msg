@@ -9,6 +9,10 @@ $(function () {
 			Msg.icon = Msg.ICONS.BOOTSTRAP;
 			break;
 			
+		case 'no':
+			Msg.iconEnabled = false;
+			break;
+			
 		default:
 			Msg.icon = {
 				info: 'fa fa-bath',
@@ -17,6 +21,8 @@ $(function () {
 				danger: 'fa fa-bolt'
 			};
 	}
+	
+	Msg.extraClass = example.attr('data-extra-class');
 	
 	$('.btn').each(function () {
 		var btn = $(this);

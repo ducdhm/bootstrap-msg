@@ -2,7 +2,7 @@
     "name": "bootstrap-msg",
     "title": "BootstrapMsg",
     "libraryName": "Msg",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "The jQuery plugin for showing message with Bootstrap alert classes",
     "main": "index.js",
     "scripts": {

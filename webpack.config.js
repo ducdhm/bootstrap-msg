@@ -17,7 +17,7 @@ let PROD = process.env.NODE_ENV === 'production';
 module.exports = {
     mode: PROD ? 'production' : 'development',
     devtool: PROD ? 'source-map' : 'inline-source-map',
-    
+
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -26,37 +26,37 @@ module.exports = {
         libraryTarget: 'umd',
         umdNamedDefine: true,
         filename: `js/${packageJson.name}.js`,
-        globalObject: `typeof self !== 'undefined' ? self : this`
+        globalObject: `typeof self !== 'undefined' ? self : this`,
     },
-    
+
     optimization: {
         minimizer: [
             new TerserJSPlugin({
-                sourceMap: true
+                sourceMap: true,
             }),
             new OptimizeCSSAssetsPlugin({
                 cssProcessorOptions: {
                     map: {
-                        inline: false
-                    }
-                }
-            })
+                        inline: false,
+                    },
+                },
+            }),
         ],
     },
-    
+
     plugins: PROD ? [
         new webpack.BannerPlugin(BANNER),
         new WrapperPlugin({
             test: /\.css$/,
-            footer: `/*# sourceMappingURL=${packageJson.name}.css.map */`
+            footer: `/*# sourceMappingURL=${packageJson.name}.css.map */`,
         }),
         new MiniCssExtractPlugin({
-            filename: `css/${packageJson.name}.css`
-        })
+            filename: `css/${packageJson.name}.css`,
+        }),
     ] : [
         new MiniCssExtractPlugin({
-            filename: `css/${packageJson.name}.css`
-        })
+            filename: `css/${packageJson.name}.css`,
+        }),
     ],
     module: {
         rules: [
@@ -65,7 +65,7 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: [
                     {
-                        loader: 'babel-loader'
+                        loader: 'babel-loader',
                     },
                     {
                         loader: 'string-replace-loader',
@@ -73,38 +73,38 @@ module.exports = {
                             multiple: [
                                 {
                                     search: '@{version}',
-                                    replace: packageJson.version
+                                    replace: packageJson.version,
                                 },
                                 {
                                     search: '\\n\\s+',
                                     replace: '',
-                                    flags: 'g'
-                                }
-                            ]
-                        }
-                    }
-                ]
+                                    flags: 'g',
+                                },
+                            ],
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ],
-            }
-        ]
+            },
+        ],
     },
     externals: {
         jquery: {
             amd: 'jquery',
             root: '$',
             commonjs: 'jquery',
-            commonjs2: 'jquery'
-        }
+            commonjs2: 'jquery',
+        },
     },
     resolve: {
         modules: [path.resolve('./node_modules'), path.resolve('./src')],
-        extensions: ['.json', '.js']
-    }
+        extensions: ['.json', '.js'],
+    },
 };
